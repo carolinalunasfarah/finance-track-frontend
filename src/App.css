@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    color: var(--color-onBackground);
+    background-color: var(--color-background);
+}
+
+.flex_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary {
+    background-color: var(--color-background) !important;
+    border: none;
+    min-width: 10rem;
+    height: 3rem;
+    border-radius: 1rem;
+}
+
+.btn-primary span {
+    font-size: 20px;
+    color: var(--color-onBackground);
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    transition: ease 1s;
+    transform: scale(1.05);
+}
+
+/* CARD */
+.symbol_card {
+    width: 20rem;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.symbol_card img {
+    width: 10rem;
+    padding: 0.5rem 0.8rem;
+}
+
+.symbol_card h3 {
+    color: var(--color-onPrimary);
+    padding: 0.5rem;
+}
+
+.symbol_card,
+.symbol_card img,
+.symbol_card h3,
+.symbol_card article {
+    background-color: var(--color-primary);
+}

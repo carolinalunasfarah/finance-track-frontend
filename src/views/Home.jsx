@@ -1,3 +1,11 @@
+import SymbolCard from "../components/SymbolCard";
+
 export const Home = () => {
-    return <div>Home</div>;
+    return (
+        <div>
+            <main>
+                <SymbolCard />
+            </main>
+        </div>
+    );
 };
