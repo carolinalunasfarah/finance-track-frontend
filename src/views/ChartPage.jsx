@@ -11,8 +11,9 @@ import {
     Legend,
     ResponsiveContainer,
 } from "recharts";
+import CustomTooltip from "../components/chart/CustomTooltip";
 
-const SymbolChart = () => {
+const ChartPage = () => {
     const { symbol } = useParams();
     const { fetchStockBySymbol, selectedSymbol } = useContext(DataContext);
 
@@ -36,13 +37,14 @@ const SymbolChart = () => {
                         <CartesianGrid strokeDasharray="4 4" />
                         <XAxis dataKey="date" tick={{ fontSize: 10 }} />
                         <YAxis tick={{ fontSize: 10 }} />
-                        <Tooltip />
+                        <Tooltip content={<CustomTooltip />} />
                         <Legend />
                         <Line
                             type="monotone"
                             dataKey="closePrice"
-                            stroke="#FFFFFF"
+                            stroke="#d9b75d"
                             strokeWidth={2}
+                            activeDot={{ r: 8 }}
                         />
                     </LineChart>
                 </ResponsiveContainer>
@@ -53,4 +55,4 @@ const SymbolChart = () => {
     );
 };
 
-export default SymbolChart;
+export default ChartPage;

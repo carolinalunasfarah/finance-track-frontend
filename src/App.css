@@ -73,7 +73,7 @@ main {
     padding: 0.5rem 0.8rem;
 }
 
-.symbol_card h3 {
+.symbol_card h2 {
     color: var(--color-onPrimary);
     padding: 0.5rem;
     font-size: 18pt;
@@ -81,7 +81,26 @@ main {
 
 .symbol_card,
 .symbol_card img,
-.symbol_card h3,
+.symbol_card h2,
 .symbol_card article {
     background-color: var(--color-primary);
+}
+
+
+/* CHART */
+.chart h2 {
+    font-size: 18pt;
+}
+
+.chart_tooltip {
+    border-radius: 0.7rem;
+    border: 1px solid var(--color-secondary);
+    padding: 0.15rem;
+    background-color: var(--color-secondary);
+}
+
+.tooltip_text {
+    background-color: rgba(217, 183, 93);
+    color: var(--color-onSecondary);
+    font-size: 12pt;
 }

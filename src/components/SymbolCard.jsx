@@ -11,7 +11,7 @@ const SymbolCard = () => {
                 <section key={index} className="symbol_card flex_col">
                     <img variant="top" src={symbol.icon} alt={symbol.name} />
                     <article className="flex_col">
-                        <h3>{symbol.name}</h3>
+                        <h2>{symbol.name}</h2>
                         <button
                             className="btn-primary"
                             onClick={() =>
