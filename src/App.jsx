@@ -1,13 +1,16 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Home } from "./views/Home";
+import { Route, Routes } from "react-router-dom";
+import SymbolChart from "./components/SymbolChart";
 
 function App() {
     return (
         <>
-            <div>
-                <Home />
-            </div>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/details/:symbol" element={<SymbolChart />} />
+            </Routes>
         </>
     );
 }

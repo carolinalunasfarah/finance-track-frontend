@@ -1,23 +1,28 @@
 export const Symbols = [
     {
         name: "Amazon",
-        symbol: "/assets/icons/amazon.svg",
+        icon: "/assets/icons/amazon.svg",
+        symbol: "AMZN",
     },
     {
         name: "Apple",
-        symbol: "/assets/icons/apple.svg",
+        icon: "/assets/icons/apple.svg",
+        symbol: "AAPL",
     },
     {
         name: "Google",
-        symbol: "/assets/icons/google.svg",
+        icon: "/assets/icons/google.svg",
+        symbol: "GOOGL",
     },
     {
         name: "Microsoft",
-        symbol: "/assets/icons/microsoft.svg",
+        icon: "/assets/icons/microsoft.svg",
+        symbol: "MSFT",
     },
     {
         name: "Roku",
-        symbol: "/assets/icons/roku.svg",
+        icon: "/assets/icons/roku.svg",
+        symbol: "ROKU",
     },
 ];
 
