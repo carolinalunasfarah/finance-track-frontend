@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import URLBASE from "../utils/config.js";
 import axios from "axios";
+import { formatClosePrice, formatDate } from "../utils/formatters.js";
 
 const DataProvider = ({ children }) => {
     const url_sync = `${URLBASE}/sync`;
@@ -27,8 +28,8 @@ const DataProvider = ({ children }) => {
             const response = await axios.get(`${url_stocks}/${symbol}`);
 
             const transformedData = response.data.map((item) => ({
-                date: new Date(item.date).toLocaleDateString(),
-                closePrice: item.close_price,
+                date: formatDate(item.date),
+                closePrice: formatClosePrice(item.close_price),
             }));
 
             setSelectedSymbol({ symbol, data: transformedData });
