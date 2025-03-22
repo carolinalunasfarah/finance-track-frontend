@@ -1,8 +1,6 @@
-import { createContext, useState } from "react";
-
+import { createContext, useState, useEffect } from "react";
 import URLBASE from "../utils/config.js";
 import axios from "axios";
-import { useEffect } from "react";
 
 const DataProvider = ({ children }) => {
     const url_sync = `${URLBASE}/sync`;
@@ -21,9 +19,19 @@ const DataProvider = ({ children }) => {
     };
 
     const fetchStockBySymbol = async (symbol) => {
+        if (selectedSymbol?.symbol === symbol) {
+            return;
+        }
+
         try {
             const response = await axios.get(`${url_stocks}/${symbol}`);
-            setSelectedSymbol(response.data);
+
+            const transformedData = response.data.map((item) => ({
+                date: new Date(item.date).toLocaleDateString(),
+                closePrice: item.close_price,
+            }));
+
+            setSelectedSymbol({ symbol, data: transformedData });
         } catch (error) {
             console.error("Error fetching stock details: ", error);
         }
@@ -32,7 +40,7 @@ const DataProvider = ({ children }) => {
     const syncStocks = async () => {
         try {
             await axios.post(url_sync);
-            fetchStocks;
+            fetchStocks();
         } catch (error) {
             console.error("Error syncing data: ", error);
         }

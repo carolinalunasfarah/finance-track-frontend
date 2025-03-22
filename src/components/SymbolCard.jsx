@@ -6,7 +6,7 @@ const SymbolCard = () => {
     const navigate = useNavigate();
 
     return (
-        <>
+        <section className="cards">
             {Symbols.map((symbol, index) => (
                 <section key={index} className="symbol_card flex_col">
                     <img variant="top" src={symbol.icon} alt={symbol.name} />
@@ -22,7 +22,7 @@ const SymbolCard = () => {
                     </article>
                 </section>
             ))}
-        </>
+        </section>
     );
 };
 
