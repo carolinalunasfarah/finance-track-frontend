@@ -24,34 +24,48 @@ const DataProvider = ({ children }) => {
     };
 
     const fetchStockBySymbol = async (symbol) => {
-        if (selectedSymbol?.symbol === symbol) {
-            return;
-        }
+        if (!selectedSymbol || selectedSymbol.symbol !== symbol) {
+            setLoading(true);
 
-        setLoading(true);
-        try {
-            const response = await axios.get(`${url_stocks}/${symbol}`);
+            try {
+                const response = await axios.get(`${url_stocks}/${symbol}`);
+                const transformedData = response.data.map((item) => ({
+                    date: formatDate(item.date),
+                    closePrice: formatClosePrice(item.close_price),
+                }));
 
-            const transformedData = response.data.map((item) => ({
-                date: formatDate(item.date),
-                closePrice: formatClosePrice(item.close_price),
-            }));
-
-            setSelectedSymbol({ symbol, data: transformedData });
-        } catch (error) {
-            console.error("Error fetching stock details: ", error);
-        } finally {
-            setLoading(false);
+                setSelectedSymbol({ symbol, data: transformedData });
+            } catch (error) {
+                console.error("Error fetching stock details: ", error);
+            } finally {
+                setLoading(false);
+            }
         }
     };
 
     const syncStocks = async () => {
         setLoading(true);
         try {
-            await axios.post(url_sync);
+            const response = await axios.post(url_sync);
+            console.log("Resultado de la sincronización:", response.data);
+
             fetchStocks();
+            return response.data;
         } catch (error) {
             console.error("Error syncing data: ", error);
+            return null;
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const syncStockBySymbol = async (symbol) => {
+        setLoading(true);
+        try {
+            await axios.post(`${url_sync}/${symbol}`);
+            fetchStockBySymbol(symbol);
+        } catch (error) {
+            console.error(`Error syncing data for ${symbol}: `, error);
         } finally {
             setLoading(false);
         }
@@ -68,6 +82,7 @@ const DataProvider = ({ children }) => {
                 syncStocks,
                 fetchStockBySymbol,
                 selectedSymbol,
+                syncStockBySymbol,
                 loading,
             }}>
             {children}

@@ -21,7 +21,7 @@ const SymbolChart = () => {
         if (!selectedSymbol || selectedSymbol.symbol !== symbol) {
             fetchStockBySymbol(symbol);
         }
-    }, [symbol, fetchStockBySymbol, selectedSymbol]);
+    }, [symbol, fetchStockBySymbol]);
 
     const hasData =
         selectedSymbol && selectedSymbol.data && selectedSymbol.data.length > 0;
