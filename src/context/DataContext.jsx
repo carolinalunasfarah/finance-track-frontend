@@ -47,8 +47,11 @@ const DataProvider = ({ children }) => {
         setLoading(true);
         try {
             const response = await axios.post(url_sync);
+            await fetchStocks();
 
-            fetchStocks();
+            if (selectedSymbol) {
+                await fetchStockBySymbol(selectedSymbol.symbol);
+            }
             return response.data;
         } catch (error) {
             console.error("Error syncing data: ", error);
@@ -62,8 +65,7 @@ const DataProvider = ({ children }) => {
         setLoading(true);
         try {
             const response = await axios.post(`${url_sync}/${symbol}`);
-
-            fetchStockBySymbol(symbol);
+            await fetchStockBySymbol(symbol);
             return response.data;
         } catch (error) {
             console.error(`Error syncing data for ${symbol}: `, error);
@@ -76,6 +78,7 @@ const DataProvider = ({ children }) => {
     useEffect(() => {
         fetchStocks();
     }, []);
+
     return (
         <DataContext.Provider
             value={{
