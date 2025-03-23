@@ -36,10 +36,19 @@ const SymbolChart = () => {
                         data={selectedSymbol.data}
                         margin={{ top: 10, right: 30, left: 30, bottom: 50 }}>
                         <CartesianGrid strokeDasharray="4 4" />
-                        <XAxis dataKey="date" tick={<CustomXAxisTick />} />
-                        <YAxis tick={<CustomYAxisTick />} />
+                        <XAxis
+                            dataKey="date"
+                            tick={<CustomXAxisTick />}
+                            tickSize={8}
+                        />
+                        <YAxis tick={<CustomYAxisTick />} tickSize={8} />
                         <Tooltip content={<CustomTooltip />} />
-                        <Legend verticalAlign="top" />
+                        <Legend
+                            verticalAlign="top"
+                            height={40}
+                            iconType="diamond"
+                            iconSize={18}
+                        />
                         <Line
                             type="monotone"
                             dataKey="closePrice"
