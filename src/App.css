@@ -102,20 +102,22 @@ main {
     background-color: var(--color-primary);
 }
 
-/* CHART */
-.chart {
-  margin-top: 1rem;
+/* CHART PAGE */
+.chart_page {
+    margin-top: 1rem;
 }
 
-.chart span {
-  font-size: 14pt;
+.chart_page span {
+    font-size: 14pt;
 }
 
-.chart h2,
+.chart_page h2,
 .welcome h2 {
     font-size: 20pt;
 }
 
+/* CHART CUSTOMIZE */
+/* TOOLTIP */
 .chart_tooltip {
     border-radius: 0.7rem;
     border: 1px solid var(--color-secondary);
@@ -127,4 +129,18 @@ main {
     background-color: rgba(217, 183, 93);
     color: var(--color-onSecondary);
     font-size: 12pt;
+}
+
+/* AXIS */
+/* X*/
+.chart_axis_x {
+    fill: var(--color-onBackground);
+    transform: rotate(-35deg);
+    text-anchor: end;
+}
+
+/* Y*/
+.chart_axis_y {
+    fill: var(--color-onBackground);
+    text-anchor: middle;
 }

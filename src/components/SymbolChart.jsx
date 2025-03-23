@@ -12,6 +12,8 @@ import {
     ResponsiveContainer,
 } from "recharts";
 import CustomTooltip from "./chart/CustomTooltip";
+import CustomXAxisTick from "./chart/CustomXAxisTick";
+import CustomYAxisTick from "./chart/CustomYAxisTick";
 
 const SymbolChart = () => {
     const { symbol } = useParams();
@@ -32,12 +34,12 @@ const SymbolChart = () => {
                 <ResponsiveContainer width="100%" height={400}>
                     <LineChart
                         data={selectedSymbol.data}
-                        margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+                        margin={{ top: 10, right: 30, left: 30, bottom: 50 }}>
                         <CartesianGrid strokeDasharray="4 4" />
-                        <XAxis dataKey="date" tick={{ fontSize: 10 }} />
-                        <YAxis tick={{ fontSize: 10 }} />
+                        <XAxis dataKey="date" tick={<CustomXAxisTick />} />
+                        <YAxis tick={<CustomYAxisTick />} />
                         <Tooltip content={<CustomTooltip />} />
-                        <Legend />
+                        <Legend verticalAlign="top" />
                         <Line
                             type="monotone"
                             dataKey="closePrice"
