@@ -13,7 +13,7 @@ const SymbolCard = () => {
                     <article className="flex_col">
                         <h2>{symbol.name}</h2>
                         <button
-                            className="btn-primary"
+                            className="btn_primary"
                             onClick={() =>
                                 navigate(`/details/${symbol.symbol}`)
                             }>

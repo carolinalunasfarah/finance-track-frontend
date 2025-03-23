@@ -9,13 +9,17 @@ const DataProvider = ({ children }) => {
 
     const [stocks, setStocks] = useState([]);
     const [selectedSymbol, setSelectedSymbol] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const fetchStocks = async () => {
+        setLoading(true);
         try {
             const response = await axios.get(url_stocks);
             setStocks(response.data);
         } catch (error) {
             console.error("Error fetching stocks: ", error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -24,6 +28,7 @@ const DataProvider = ({ children }) => {
             return;
         }
 
+        setLoading(true);
         try {
             const response = await axios.get(`${url_stocks}/${symbol}`);
 
@@ -35,15 +40,20 @@ const DataProvider = ({ children }) => {
             setSelectedSymbol({ symbol, data: transformedData });
         } catch (error) {
             console.error("Error fetching stock details: ", error);
+        } finally {
+            setLoading(false);
         }
     };
 
     const syncStocks = async () => {
+        setLoading(true);
         try {
             await axios.post(url_sync);
             fetchStocks();
         } catch (error) {
             console.error("Error syncing data: ", error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -53,7 +63,13 @@ const DataProvider = ({ children }) => {
 
     return (
         <DataContext.Provider
-            value={{ stocks, syncStocks, fetchStockBySymbol, selectedSymbol }}>
+            value={{
+                stocks,
+                syncStocks,
+                fetchStockBySymbol,
+                selectedSymbol,
+                loading,
+            }}>
             {children}
         </DataContext.Provider>
     );

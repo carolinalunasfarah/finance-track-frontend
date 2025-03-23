@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-.btn-primary {
+.btn_primary {
     background-color: var(--color-background) !important;
     border: none;
     min-width: 10rem;
@@ -19,15 +19,30 @@
     border-radius: 1rem;
 }
 
-.btn-primary span {
+.btn_primary span {
     font-size: 20px;
     color: var(--color-onBackground);
     font-weight: 600;
 }
 
-.btn-primary:hover {
+.btn_primary:hover {
     transition: ease 1s;
     transform: scale(1.05);
+}
+
+.btn_secondary {
+    background-color: var(--color-secondary) !important;
+    border: none;
+    height: 4rem;
+    border-radius: 1rem;
+}
+
+.btn_secondary span {
+    font-size: 20px;
+    color: var(--color-onSecondary);
+    background-color: var(--color-secondary) !important;
+    font-weight: 600;
+    padding: 1rem;
 }
 
 /* HEADER */
@@ -43,7 +58,7 @@ header {
 }
 
 header h1 {
-    font-size: 20pt;
+    font-size: 22pt;
     padding: 0.5rem;
     color: var(--color-onPrimary);
 }
@@ -51,8 +66,13 @@ header h1 {
 /* MAIN */
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.welcome span {
+    font-size: 14pt;
 }
 
 .cards {
@@ -76,7 +96,7 @@ main {
 .symbol_card h2 {
     color: var(--color-onPrimary);
     padding: 0.5rem;
-    font-size: 18pt;
+    font-size: 20pt;
 }
 
 .symbol_card,
@@ -86,10 +106,10 @@ main {
     background-color: var(--color-primary);
 }
 
-
 /* CHART */
-.chart h2 {
-    font-size: 18pt;
+.chart h2,
+.welcome h2 {
+    font-size: 20pt;
 }
 
 .chart_tooltip {
