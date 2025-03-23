@@ -33,7 +33,7 @@
 .btn_secondary {
     background-color: var(--color-secondary) !important;
     border: none;
-    height: 4rem;
+    height: 3rem;
     border-radius: 1rem;
 }
 
@@ -42,7 +42,7 @@
     color: var(--color-onSecondary);
     background-color: var(--color-secondary) !important;
     font-weight: 600;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 /* HEADER */
@@ -69,10 +69,6 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.welcome span {
-    font-size: 14pt;
 }
 
 .cards {
@@ -107,6 +103,14 @@ main {
 }
 
 /* CHART */
+.chart {
+  margin-top: 1rem;
+}
+
+.chart span {
+  font-size: 14pt;
+}
+
 .chart h2,
 .welcome h2 {
     font-size: 20pt;

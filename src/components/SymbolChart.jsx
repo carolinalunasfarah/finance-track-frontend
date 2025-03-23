@@ -27,8 +27,7 @@ const SymbolChart = () => {
         selectedSymbol && selectedSymbol.data && selectedSymbol.data.length > 0;
 
     return (
-        <section className="chart flex_col mt-4">
-            <h2>Evolución de {symbol}</h2>
+        <section className="flex_col mt-4">
             {hasData ? (
                 <ResponsiveContainer width="100%" height={400}>
                     <LineChart
