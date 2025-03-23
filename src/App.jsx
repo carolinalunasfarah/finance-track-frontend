@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Home } from "./views/Home";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import ChartPage from "./views/ChartPage";
+import SymbolChart from "./components/SymbolChart";
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/details/:symbol" element={<ChartPage />} />
+                <Route path="/details/:symbol" element={<SymbolChart />} />
             </Routes>
         </>
     );
