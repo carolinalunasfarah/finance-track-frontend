@@ -1,3 +1,4 @@
+// components
 import SymbolCard from "../components/SymbolCard";
 import Welcome from "../components/Welcome";
 

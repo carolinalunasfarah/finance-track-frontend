@@ -1,11 +1,14 @@
+// hooks
 import { useParams } from "react-router-dom";
+
+// components
 import SymbolChart from "../components/SymbolChart";
 import SyncButton from "../components/SyncButton";
 import NavigationBreadcrumb from "../components/NavigationBreadcrumb";
 
 const ChartPage = () => {
     const { symbol } = useParams();
-    
+
     return (
         <>
             <section className="px-5 pt-4">
@@ -26,7 +29,8 @@ const ChartPage = () => {
                     <span className="pb-4 cursor_default">
                         Haz click para actualizar a la fecha de hoy
                         <br />
-                        Ten en cuenta que la fecha puede demorar hasta 48 horas en actualizarse
+                        Ten en cuenta que la fecha puede demorar hasta 48 horas
+                        en actualizarse
                     </span>
                     <SyncButton />
                 </article>

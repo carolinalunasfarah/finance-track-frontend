@@ -1,6 +1,8 @@
+// hooks
 import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import { DataContext } from "../context/DataContext";
+
+// recharts
 import {
     LineChart,
     Line,
@@ -11,6 +13,11 @@ import {
     Legend,
     ResponsiveContainer,
 } from "recharts";
+
+// context
+import { DataContext } from "../context/DataContext";
+
+// custom chart features
 import CustomTooltip from "./chart/CustomTooltip";
 import CustomXAxisTick from "./chart/CustomXAxisTick";
 import CustomYAxisTick from "./chart/CustomYAxisTick";

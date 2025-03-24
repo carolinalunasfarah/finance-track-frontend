@@ -1,7 +1,11 @@
+// hooks
 import { useContext } from "react";
-import { DataContext } from "../context/DataContext";
 import { useParams } from "react-router-dom";
 
+// context
+import { DataContext } from "../context/DataContext";
+
+// notifications
 import Swal from "sweetalert2";
 
 const SyncButton = () => {

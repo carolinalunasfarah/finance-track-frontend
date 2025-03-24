@@ -1,7 +1,13 @@
+// hooks
 import { createContext, useState, useEffect } from "react";
+
+// config
 import URLBASE from "../utils/config.js";
-import axios from "axios";
+
+// utils
 import { formatClosePrice, formatDate } from "../utils/formatters.js";
+
+import axios from "axios";
 
 const DataProvider = ({ children }) => {
     const url_sync = `${URLBASE}/sync`;

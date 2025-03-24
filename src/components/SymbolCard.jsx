@@ -1,5 +1,7 @@
-//data
+// hooks
 import { useNavigate } from "react-router-dom";
+
+//data
 import { Symbols } from "../data/Symbols.jsx";
 
 const SymbolCard = () => {
