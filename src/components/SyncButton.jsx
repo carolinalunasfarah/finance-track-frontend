@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 import { useParams } from "react-router-dom";
 
+import Swal from "sweetalert2";
+
 const SyncButton = () => {
     const { symbol } = useParams();
     const { loading, syncStockBySymbol } = useContext(DataContext);
@@ -11,13 +13,44 @@ const SyncButton = () => {
             const result = await syncStockBySymbol(symbol);
 
             if (result) {
-                console.log("Resultado de la sincronización:", result);
-                alert("Datos actualizados con éxito 🚀");
+                Swal.fire({
+                    title: "¡Yey!",
+                    html: `<p>Los datos se actualizaron con éxito</p>`,
+                    confirmButtonText: "Entendido",
+                    customClass: {
+                        popup: "swal_popup",
+                        title: "swal_title",
+                        confirmButton: "success_swal_confirm",
+                    },
+                    padding: "1.8rem",
+                });
+                return;
             } else {
-                alert("Hubo un error al sincronizar ❌");
+                Swal.fire({
+                    title: "¡Ups!",
+                    html: `<p>Hubo un error al actualizar los datos</p>`,
+                    confirmButtonText: "Entendido",
+                    customClass: {
+                        popup: "swal_popup",
+                        title: "swal_title",
+                        confirmButton: "error_swal_confirm",
+                    },
+                    padding: "1.8rem",
+                });
+                return;
             }
         } catch (error) {
-            alert("Hubo un error al sincronizar ❌");
+            Swal.fire({
+                title: "¡Ups!",
+                html: `<p>No se pudieron actualizar los datos</p>`,
+                confirmButtonText: "Entendido",
+                customClass: {
+                    popup: "swal_popup",
+                    title: "swal_title",
+                    confirmButton: "error_swal_confirm",
+                },
+                padding: "1.8rem",
+            });
         }
     };
 

@@ -115,7 +115,7 @@ main {
 .breadcrumb_active a {
     color: var(--color-onBackground);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12pt;
 }
 
 /* CHART PAGE */
@@ -159,4 +159,44 @@ main {
 .chart_axis_y {
     fill: var(--color-onBackground);
     text-anchor: middle;
+}
+
+/* SWAL NOTIFICATIONS */
+.swal_popup {
+    background-color: var(--color-background) !important;
+    border-radius: 2rem !important;
+    box-shadow: none !important;
+}
+
+.swal_title {
+    color: var(--color-onBackground) !important;
+    font-size: 18pt !important;
+    font-weight: bold !important;
+}
+
+.swal_text {
+    color: var(--color-onBackground) !important;
+    font-weight: 800 !important;
+}
+
+.swal_icon {
+    background-color: var(--color-background) !important;
+}
+
+.success_swal_confirm,
+.error_swal_confirm {
+    border-radius: 2rem !important;
+    padding: 1rem !important;
+    font-size: 16pt !important;
+    border: none !important;
+}
+
+.success_swal_confirm {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-onSecondary) !important;
+}
+
+.error_swal_confirm {
+    background-color: var(--color-tertiary) !important;
+    color: var(--color-onTertiary) !important;
 }
