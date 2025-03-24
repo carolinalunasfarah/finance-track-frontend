@@ -5,7 +5,7 @@
 }
 
 .cursor_default {
-  cursor: default;
+    cursor: default;
 }
 
 .flex_col {
@@ -48,6 +48,29 @@
     font-weight: 600;
     padding: 0.5rem;
 }
+
+/* LOADING SPINNER */
+.loading_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(35, 39, 51, 0.7);
+}
+
+.loading_overlay_text{
+    top: 10rem;
+    font-size: 16pt;
+}
+
+.loading_overlay_text p {
+  background-color: rgba(35, 39, 51, 0.025);
+}
+
 
 /* HEADER */
 header,
@@ -127,7 +150,8 @@ main {
     margin-top: 1rem;
 }
 
-.chart_page span {
+.chart_page span,
+.welcome span {
     font-size: 14pt;
 }
 
