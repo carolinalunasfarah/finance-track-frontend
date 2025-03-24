@@ -102,6 +102,22 @@ main {
     background-color: var(--color-primary);
 }
 
+/* NAVIGATION BREADCRUMB */
+.navigation_breadcrumb {
+    height: 1rem;
+}
+
+.navigation_breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    color: var(--color-onBackground);
+}
+
+.breadcrumb_inactive a,
+.breadcrumb_active a {
+    color: var(--color-onBackground);
+    text-decoration: none;
+    font-size: 14px;
+}
+
 /* CHART PAGE */
 .chart_page {
     margin-top: 1rem;
