@@ -1,7 +1,7 @@
 const Header = () => {
     return (
         <header className="flex_col">
-            <h1>Finance Track</h1>
+            <h1 className="cursor_default">Finance Track</h1>
         </header>
     );
 };

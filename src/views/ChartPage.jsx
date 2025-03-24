@@ -21,10 +21,12 @@ const ChartPage = () => {
                     ]}></NavigationBreadcrumb>
             </section>
             <section className="text-center chart_page">
-                <h2>Evolución de {symbol}</h2>
+                <h2 className="cursor_default">Evolución de {symbol}</h2>
                 <article className="pt-2 flex_col">
-                    <span className="pb-4">
+                    <span className="pb-4 cursor_default">
                         Haz click para actualizar a la fecha de hoy
+                        <br />
+                        Ten en cuenta que la fecha puede demorar hasta 48 horas en actualizarse
                     </span>
                     <SyncButton />
                 </article>

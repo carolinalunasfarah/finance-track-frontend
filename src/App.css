@@ -4,6 +4,10 @@
     background-color: var(--color-background);
 }
 
+.cursor_default {
+  cursor: default;
+}
+
 .flex_col {
     display: flex;
     flex-direction: column;
