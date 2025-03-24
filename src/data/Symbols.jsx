@@ -10,14 +10,34 @@ export const Symbols = [
         symbol: "AAPL",
     },
     {
+        name: "Coca-Cola",
+        icon: "/assets/icons/cocacola.svg",
+        symbol: "KO",
+    },
+    {
+        name: "Johnson & Jhonson",
+        icon: "/assets/icons/jnj.svg",
+        symbol: "JNJ",
+    },
+    {
         name: "Google",
         icon: "/assets/icons/google.svg",
         symbol: "GOOGL",
     },
     {
+        name: "Meta",
+        icon: "/assets/icons/meta.svg",
+        symbol: "META",
+    },
+    {
         name: "Microsoft",
         icon: "/assets/icons/microsoft.svg",
         symbol: "MSFT",
+    },
+    {
+        name: "NVIDIA",
+        icon: "/assets/icons/nvidia.svg",
+        symbol: "NVDA",
     },
     {
         name: "Roku",
