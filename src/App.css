@@ -120,6 +120,7 @@ main {
     color: var(--color-onPrimary);
     padding: 0.5rem;
     font-size: 20pt;
+    height: 5rem;
 }
 
 .symbol_card,
