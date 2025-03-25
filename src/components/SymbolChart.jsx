@@ -27,10 +27,8 @@ const SymbolChart = () => {
     const { fetchStockBySymbol, selectedSymbol } = useContext(DataContext);
 
     useEffect(() => {
-        if (!selectedSymbol || selectedSymbol.symbol !== symbol) {
-            fetchStockBySymbol(symbol);
-        }
-    }, [symbol, fetchStockBySymbol, selectedSymbol]);
+        fetchStockBySymbol(symbol);
+    }, [symbol, fetchStockBySymbol]);
 
     const hasData =
         selectedSymbol && selectedSymbol.data && selectedSymbol.data.length > 0;
@@ -41,14 +39,18 @@ const SymbolChart = () => {
                 <ResponsiveContainer width="100%" height={400}>
                     <LineChart
                         data={selectedSymbol.data}
-                        margin={{ top: 10, right: 30, left: 30, bottom: 50 }}>
+                        margin={{ top: 30, right: 30, left: 30, bottom: 50 }}>
                         <CartesianGrid strokeDasharray="4 4" />
                         <XAxis
                             dataKey="date"
                             tick={<CustomXAxisTick />}
                             tickSize={8}
                         />
-                        <YAxis tick={<CustomYAxisTick />} tickSize={8} />
+                        <YAxis
+                            tick={<CustomYAxisTick />}
+                            tickSize={8}
+                            domain={[0, 1000]}
+                        />
                         <Tooltip content={<CustomTooltip />} />
                         <Legend
                             verticalAlign="top"

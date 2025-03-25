@@ -29,6 +29,8 @@ const SyncButton = () => {
                         confirmButton: "success_swal_confirm",
                     },
                     padding: "1.8rem",
+                }).then(() => {
+                    window.location.reload();
                 });
                 return;
             } else {
