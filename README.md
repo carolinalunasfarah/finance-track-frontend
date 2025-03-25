@@ -2,6 +2,15 @@
 
 Este frontend proporciona una interfaz de usuario para interactuar con la API de Finance Track. Permite visualizar y sincronizar datos históricos de acciones financieras.
 
+## 🏗️ Arquitectura utilizada
+
+La aplicación sigue una arquitectura basada en **Cliente - Servidor**, donde:
+
+-   **Backend** (Servidor - API RESTful): Sigue patrón MVC internamente  
+-   **Frontend** (Cliente - SPA en React): Consume API del backend y gestiona UI
+
+En este caso el Frontend sigue una arquitectura basada en **Componentes Funcionales** con **React** y el manejo de estado global a través de **Context API**.
+
 ## ⚙ Tecnologías utilizadas
 
 -   **React**: Framework para construir la interfaz de usuario.
