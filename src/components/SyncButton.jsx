@@ -10,13 +10,15 @@ import Swal from "sweetalert2";
 
 const SyncButton = () => {
     const { symbol } = useParams();
-    const { loading, syncStockBySymbol } = useContext(DataContext);
+    const { loading, syncStockBySymbol, fetchStockBySymbol } =
+        useContext(DataContext);
 
     const handleSync = async () => {
         try {
             const result = await syncStockBySymbol(symbol);
 
             if (result) {
+                await fetchStockBySymbol(symbol);
                 Swal.fire({
                     title: "¡Yey!",
                     html: `<p>Los datos se actualizaron con éxito</p>`,
