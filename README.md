@@ -25,10 +25,11 @@ En este caso el Frontend sigue una arquitectura basada en **Componentes Funciona
 ## 📂 Estructura de carpetas
 
 -   **`src/`**: Carpeta principal del código fuente.
-    -   **`components/`**: Contiene componentes reutilizables de la interfaz (e.g., botones, listas, tablas, etc.).
-    -   **`context/`**: Contiene los contextos de la aplicación para manejar el estado global.
+    -   **`components/`**: Contiene componentes reutilizables de la interfaz (botón de sincronización, gráfico acciones).
+    -   **`context/`**: Contiene el contexto de data de la aplicación para manejar el estado global.
     -   **`views/`**: Contiene las vistas de las páginas principales.
-    -   **`utils/`**: Contiene funciones de utilidad y configuraciones.
+    -   **`utils/`**: Contiene funciones de utilidad.
+    -   **`utils/`**: Contiene datos relevantes por acción y adiciona un ícono para visualización.
 
 -   **`public/`**: Carpeta pública.
     -   **`assets/`**: Carpeta de recursos estáticos como íconos.
@@ -36,7 +37,7 @@ En este caso el Frontend sigue una arquitectura basada en **Componentes Funciona
 ## 📌 Rutas principales
 
 -   **Página principal (Home):** `/`  
-    Muestra la lista de acciones y permite seleccionar una de las 5 disponibles para explorar el detalle.
+    Muestra la lista de acciones y permite seleccionar una de las 9 disponibles para explorar el detalle.
 
 -   **Página de detalles de acción:** `/details/:symbol`  
     Muestra los datos históricos de una acción específica, incluyendo el precio de cierre a lo largo de un periodo de tiempo de un año.
