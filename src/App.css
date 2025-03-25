@@ -24,7 +24,7 @@
 }
 
 .btn_primary span {
-    font-size: 20px;
+    font-size: 16pt;
     color: var(--color-onBackground);
     font-weight: 600;
 }
@@ -42,7 +42,7 @@
 }
 
 .btn_secondary span {
-    font-size: 20px;
+    font-size: 16pt;
     color: var(--color-onSecondary);
     background-color: var(--color-secondary) !important;
     font-weight: 600;
@@ -62,15 +62,14 @@
     background-color: rgba(35, 39, 51, 0.7);
 }
 
-.loading_overlay_text{
+.loading_overlay_text {
     top: 10rem;
     font-size: 16pt;
 }
 
 .loading_overlay_text p {
-  background-color: rgba(35, 39, 51, 0.025);
+    background-color: rgba(35, 39, 51, 0.025);
 }
-
 
 /* HEADER */
 header,
@@ -152,12 +151,14 @@ main {
 }
 
 .chart_page span,
-.welcome span {
+.welcome span,
+.not_found span {
     font-size: 14pt;
 }
 
 .chart_page h2,
-.welcome h2 {
+.welcome h2,
+.not_found h2 {
     font-size: 20pt;
 }
 
@@ -165,7 +166,7 @@ main {
 /* TOOLTIP */
 .chart_tooltip {
     border-radius: 0.7rem;
-    border: 1px solid var(--color-secondary);
+    border: 0.5rem solid var(--color-secondary);
     padding: 0.15rem;
     background-color: var(--color-secondary);
 }

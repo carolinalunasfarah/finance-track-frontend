@@ -1,9 +1,17 @@
+// router
+import { Route, Routes } from "react-router-dom";
+
+// styles
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+// views
 import { Home } from "./views/Home";
-import { Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
 import ChartPage from "./views/ChartPage";
+import NotFound from "./views/NotFound";
+
+// components
+import Header from "./components/Header";
 
 function App() {
     return (
@@ -12,6 +20,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/details/:symbol" element={<ChartPage />} />
+
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </>
     );
