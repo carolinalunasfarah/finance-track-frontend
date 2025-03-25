@@ -17,19 +17,19 @@ En este caso el Frontend sigue una arquitectura basada en **Componentes Funciona
 -   **React Router**: Para el manejo de navegación entre páginas.
 -   **React Context**: Para la gestión de estado global, como el estado de las acciones y la sincronización de datos.
 -   **Axios**: Para realizar solicitudes HTTP a la API del backend.
--   **Bootstrap**: Para diseño de la interfaz con componentes responsivos y modernos.
--   **Recharts**: Para diseño de gráficos de datos.
+-   **Bootstrap**: Para diseño de la interfaz responsiva y moderna.
 -   **React Bootstrap**: Para algunos componentes visuales, como breadcrumb y spinner.
+-   **Recharts**: Para diseño de gráficos de datos.
 -   **SweetAlert2**: Para mostrar alertas estilizadas e interactivas en la interfaz.
 
-## 📂 Estructura de carpetas
+## 📂 Organización del código
 
 -   **`src/`**: Carpeta principal del código fuente.
     -   **`components/`**: Contiene componentes reutilizables de la interfaz (botón de sincronización, gráfico acciones).
     -   **`context/`**: Contiene el contexto de data de la aplicación para manejar el estado global.
     -   **`views/`**: Contiene las vistas de las páginas principales.
     -   **`utils/`**: Contiene funciones de utilidad.
-    -   **`utils/`**: Contiene datos relevantes por acción y adiciona un ícono para visualización.
+    -   **`data/`**: Contiene datos relevantes por acción y adiciona un ícono para visualización.
 
 -   **`public/`**: Carpeta pública.
     -   **`assets/`**: Carpeta de recursos estáticos como íconos.
